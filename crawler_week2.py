@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+from whoosh.index import create_in
+from whoosh.fields import *
 
 def crawl(start_url):
     crawled_urls = []
