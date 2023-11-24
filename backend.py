@@ -1,5 +1,5 @@
 # backend.py
-import crawler
+import crawler_v2
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
@@ -11,4 +11,4 @@ def home():
 @app.route('/search')
 def search():
     query = request.args['q']
-    return render_template('search.html', q = query, result = crawler.search(query.split()))
+    return render_template('search.html', q = query, result = crawler_v2.search(query))

@@ -49,7 +49,10 @@ def search(words, indexdir = ""):
     with ix.searcher() as searcher:
         query = QueryParser("content", ix.schema).parse(words)
         result = searcher.search(query)
-        return result
+        result_list = []
+        for r in result:
+            result_list.append(r['url'])
+        return result_list
     # result = []
     # for word in words:
     #     if word in index:
@@ -57,9 +60,9 @@ def search(words, indexdir = ""):
     # return result
 
 if __name__ == "__main__":
-    start_url = "https://vm009.rz.uos.de/crawl/"
-    create_index(start_url)
+#    start_url = "https://vm009.rz.uos.de/crawl/"
+#    create_index(start_url)
     # index = crawl(start_url)
     search_words = "platypus"
     search_result = search(search_words, "indexdir")
-    print(search_result)
+    print(search_result[0])
