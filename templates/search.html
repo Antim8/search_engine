@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Searchresults</title>
+    </head>
+    <body>
+        <h1>Searchresults for /"{{q}}/"</h1>
+        <ul>
+        {% for i in result %}
+            <li> <a href={{ i }}>{{ i }}</a> </li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>

@@ -1,2 +1,4 @@
+woosh
 beautifulsoup4
 requests
+flask
