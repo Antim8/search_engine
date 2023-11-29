@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Searchresults</title>
-    </head>
-    <body>
-        <h1>Searchresults for /"{{q}}/"</h1>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ q }}"</h1>
+
+    {% if suggestion %}
+        <p>Did you mean: {{ suggestion }}</p>
+    {% endif %}
+
+    {% if results %}
+        {% if suggestion %}
+            <h2>Search Results for "{{ suggestion }}":</h2>
+        {% endif %}
         <ul>
-        {% for i in result %}
-            <li> <a href={{ i }}>{{ i }}</a> </li>
-        {% endfor %}
+            {% for result in results %}
+                <li>{{ result.title }} - <a href="{{ result.url }}">{{ result.url }}</a></li>
+            {% endfor %}
         </ul>
-    </body>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+</body>
 </html>
+
