@@ -28,3 +28,4 @@ build/
 # Editor backup files
 *~
 *.swp
+.python-version

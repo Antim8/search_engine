@@ -1,4 +1,4 @@
-woosh
+whoosh
 beautifulsoup4
 requests
 flask
