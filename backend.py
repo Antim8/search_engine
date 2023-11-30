@@ -1,10 +1,10 @@
-import crawler_v2
+import crawler
 from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
 def perform_search(query):
-    result = crawler_v2.search(query)
+    result = crawler.search(query)
     suggestion, results = result.get("suggestion"), result.get("results", [])
     print(f"Query: {query}, Suggestion: {suggestion}, Results: {results}")
     return suggestion, results
